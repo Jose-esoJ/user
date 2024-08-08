@@ -57,7 +57,6 @@ public class UserMapperImplTest {
 
         String email = "test@example.com";
         String token = "generated-token";
-        LocalDateTime now = LocalDateTime.now();
         RequestUserDto requestUserDto = RequestUserDto.builder()
                 .name("John Doe")
                 .email(email)

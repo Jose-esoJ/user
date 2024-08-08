@@ -42,7 +42,7 @@ public class UserMapperImpl implements UserMapper {
                 .created(dateTime)
                 .modified(dateTime)
                 .lastLogin(dateTime)
-                .token(jwtTokenProvider.generateToken(requestUserDto.getEmail()).toString())
+                .token(jwtTokenProvider.generateToken(requestUserDto.getEmail()))
                 .isActive(true)
                 .phoneEntities(requestUserDto.getPhones().stream().map(phoneDTO -> {
                     PhoneEntity phoneEntity = new PhoneEntity();
