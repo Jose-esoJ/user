@@ -1,4 +1,4 @@
-package com.example.user.domain.dto;
+package com.example.user.service.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

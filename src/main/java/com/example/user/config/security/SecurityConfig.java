@@ -1,4 +1,4 @@
-package com.example.user.config;
+package com.example.user.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,12 +15,13 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests()
-                .requestMatchers("/users/register").permitAll() // Permite acceso sin autenticación
+                .authorizeHttpRequests()
+                .requestMatchers("/users/register", "/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll() // Permite acceso sin autenticación
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new JwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
+
 }

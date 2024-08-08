@@ -1,6 +1,5 @@
-package com.example.user.domain.dto;
+package com.example.user.service.dto;
 
-import com.example.user.persistence.entity.PhoneEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,6 @@ import lombok.Setter;
 import lombok.Builder;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor

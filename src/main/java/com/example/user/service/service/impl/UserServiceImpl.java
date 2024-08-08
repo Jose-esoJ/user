@@ -1,12 +1,13 @@
-package com.example.user.domain.service.impl;
+package com.example.user.service.service.impl;
 
-import com.example.user.domain.dto.RequestUserDto;
-import com.example.user.domain.dto.ResponseUserDto;
-import com.example.user.domain.service.UserService;
+import com.example.user.service.dto.RequestUserDto;
+import com.example.user.service.dto.ResponseUserDto;
+import com.example.user.service.service.UserService;
 import com.example.user.exception.UserAlreadyExistsException;
 import com.example.user.persistence.entity.CustomerEntity;
 import com.example.user.persistence.mapper.UserMapper;
 import com.example.user.persistence.repository.UserRepository;
+import com.example.user.util.constant.Message;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
     private void validateEmailExist(String email) {
         if (userRepository.findByEmail(email).isPresent()) {
-            throw new UserAlreadyExistsException("The Email is already registered");
+            throw new UserAlreadyExistsException(Message.MESSAGE_EMAIL_EXIST.getDescription());
         }
     }
 

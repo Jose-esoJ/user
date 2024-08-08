@@ -1,9 +1,8 @@
 package com.example.user.persistence.mapper.Impl;
 
-import com.example.user.config.JwtTokenProvider;
-import com.example.user.domain.dto.PhoneDto;
-import com.example.user.domain.dto.RequestUserDto;
-import com.example.user.domain.dto.ResponseUserDto;
+import com.example.user.config.security.JwtTokenProvider;
+import com.example.user.service.dto.RequestUserDto;
+import com.example.user.service.dto.ResponseUserDto;
 import com.example.user.persistence.entity.CustomerEntity;
 import com.example.user.persistence.entity.PhoneEntity;
 import com.example.user.persistence.mapper.UserMapper;
@@ -11,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
